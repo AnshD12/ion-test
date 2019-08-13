@@ -10,7 +10,7 @@
       "pass": "",
       "port": 27017,
       "database": "dodo",
-      "uri": "mongodb+srv://AnshulD12:Angelic.007@cluster0-b06dh.mongodb.net/ion?retryWrites=true&w=majority"
+      "uri": "mongodb+srv://AnshulD12:Angelic.007@cluster0-b06dh.mongodb.net/ion-test?retryWrites=true&w=majority"
     }
   },
   "docker": {
@@ -24,7 +24,7 @@
       "pass": "",
       "port": 27017,
       "database": "dodo",
-      "uri": "mongodb+srv://AnshulD12:Angelic.007@cluster0-b06dh.mongodb.net/ion-test?retryWrites=true&w=majority"
+      "uri": "mongodb+srv://AnshulD12:Angelic.007@cluster0-b06dh.mongodb.net/ion-energy-test?retryWrites=true&w=majority"
     }
   },
   "testing": {
@@ -38,7 +38,7 @@
       "pass": "",
       "port": 27017,
       "database": "dodo",
-      "uri": "mongodb+srv://AnshulD12:Angelic.007@cluster0-b06dh.mongodb.net/ion?retryWrites=true&w=majority"
+      "uri": "mongodb+srv://AnshulD12:Angelic.007@cluster0-b06dh.mongodb.net/ion-energy?retryWrites=true&w=majority"
     }
   },
   "production": {
@@ -52,7 +52,7 @@
       "pass": "",
       "port": 27017,
       "database": "dodo",
-      "uri": "mongodb+srv://AnshulD12:Angelic.007@cluster0-b06dh.mongodb.net/ion?retryWrites=true&w=majority"
+      "uri": "mongodb+srv://AnshulD12:Angelic.007@cluster0-b06dh.mongodb.net/ion-energy?retryWrites=true&w=majority"
     }
   }
 }

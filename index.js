@@ -7,14 +7,23 @@ const logger = require('./config/winston');
 const routes = require('./app/routes');
 
 const db = config.mongoDb.uri;
+console.log(config, db);
 const app = express();
 
 app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
-    extended: false,
+    extended: true,
   }),
 );
+
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.setHeader('Access-Control-Allow-Methods', 'POST');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  next();
+});
 
 mongoose.connect(db, { useNewUrlParser: true })
   .then(() => logger.info('database connected'))
@@ -24,6 +33,18 @@ mongoose.connect(db, { useNewUrlParser: true })
   });
 
 routes(app);
+
+app.on('uncaughtException', (req, res, route, err) => {
+  console.log('uncaughtException', err);
+  logger.warn('Uncaught process exception: ', err);
+  process.exit(1);
+});
+
+process.on('unhandledRejection', (reason) => {
+  console.log('unhandledRejection', reason);
+  logger.error('Unhandled promise rejection:', reason);
+  process.exit(1);
+});
 
 const port = process.env.PORT || 3001;
 
